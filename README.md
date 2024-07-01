@@ -6,13 +6,19 @@ created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Run app
 
-1. Install dependencies
+1. Set .env variables
+
+   ```bash
+   EXPO_PUBLIC_API_URL=
+   ```
+
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the app
 
    ```bash
     npx expo start

@@ -8,4 +8,8 @@ export const typeDefs = gql`
   extend type ModuleSimplePageMobileModel {
     name: String @client
   }
+  
+  extend type ModuleSpecialAnnouncementMobileModel {
+    textMessage: String @client
+  }
 `;

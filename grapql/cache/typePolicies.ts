@@ -112,3 +112,15 @@ export const RadioMessageTypePolicy = {
         }
     }
 }
+
+export const SpecialAnnouncementMessageTypePolicy = {
+    ModuleSpecialAnnouncementMobileModel: {
+        fields: {
+            textMessage: {
+                read() {
+                    return faker.lorem.paragraph({min: 1, max: 4})
+                }
+            }
+        }
+    }
+}

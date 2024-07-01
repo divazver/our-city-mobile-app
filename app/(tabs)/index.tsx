@@ -14,12 +14,14 @@ import ModuleButton from "@/components/moduleButton/ModuleButton";
 import {ModuleTypesEnum} from "@/enums/ModuleTypesEnum";
 import {MODULES_LINKS} from "@/constants/Modules";
 import ErrorScreen from "@/components/errorScreen/ErrorScreen";
+import SeverityAlert from "@/components/severityAlert/SeverityAlert";
 
 export default function HomeScreen() {
     const configuration = useReactiveVar(configurationVar) as Configuration;
     const {setModules} = useApp();
     const {data, loading, error, refetch} = useQuery(ORGANISATIONS_LIST_BY_ID, {variables: {id: configuration.id}});
     const [modulesList, setModulesList] = useState([]);
+    const [announcements, setAnnouncements] = useState([]);
 
     useEffect(() => {
         refetch()
@@ -36,11 +38,12 @@ export default function HomeScreen() {
                 if(module.moduleType === ModuleTypesEnum.page)
                     moduleList.push(...module.moduleSimplePages)
                 else if (module.moduleType === ModuleTypesEnum.specAnn)
-                    specialAnn = module
+                    specialAnn = module.moduleSpecialAnnouncements
                 else
                     moduleList.push(module);
             });
 
+            setAnnouncements(specialAnn);
             setModulesList(moduleList);
         }
     }, [data]);
@@ -64,6 +67,11 @@ export default function HomeScreen() {
                 onDismiss={() => {
                 }}
                 message={"V nasej obci vsetci piju iba duro nie. Kto vie co mu asi je!"}></Toast>
+            {announcements.length > 0 && <View style={styles.annoucementsList}>{
+                announcements.map(({textMessage, severity}, index) =>
+                    <SeverityAlert message={textMessage} severity={severity} key={`${severity}-${index}`} />
+                )
+            }</View>}
             <View style={styles.moduleList}>
                 {modulesList.map((module, index) => <ModuleButton
                         key={`${module.id}-${module.name}`}
@@ -77,6 +85,13 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+    annoucementsList: {
+        display: "flex",
+        gap: Spacings.s2,
+        flexDirection: "column",
+        margin: Spacings.s5,
+        marginBottom: 0
+    },
     moduleList: {
         display: "flex",
         gap: Spacings.s5,
@@ -85,28 +100,4 @@ const styles = StyleSheet.create({
         margin: Spacings.s5,
         paddingBottom: 85,
     },
-    moduleWrapper: {
-        width: '29.76%',
-        display: "flex",
-        alignItems: "center",
-    },
-    module: {
-        width: "100%"
-    },
-    moduleIcon: {
-        backgroundColor: Colors.$backgroundPrimaryHeavy,
-        height: 105,
-        borderRadius: 15,
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    moduleTitle: {
-        width: "100%",
-        marginTop: Spacings.s1
-    },
-    moduleTitleText: {
-        textAlign: "center",
-    }
 });

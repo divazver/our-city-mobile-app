@@ -4,7 +4,7 @@ import {
     EventTypePolicy,
     OrganisationsListModelTypePolicy,
     RadioMessageTypePolicy,
-    SimplePagesTypePolicy
+    SimplePagesTypePolicy, SpecialAnnouncementMessageTypePolicy
 } from "./typePolicies";
 import {Configuration} from "@/types/configuration";
 
@@ -21,6 +21,7 @@ export const cache: InMemoryCache = new InMemoryCache({
         ...SimplePagesTypePolicy,
         ...OrganisationsListModelTypePolicy,
         ...RadioMessageTypePolicy,
+        ...SpecialAnnouncementMessageTypePolicy,
         Query: {
             fields: {
                 configuration: {
