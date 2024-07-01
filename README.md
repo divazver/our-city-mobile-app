@@ -4,6 +4,8 @@ This is an MVP of mobile app for municipalities. It helps
 spread information to citizens. This app is based on [Expo](https://expo.dev) and has been
 created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+![Alt text](./app.png "App Our City")
+
 ## Run app
 
 1. Set .env variables
