@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ModuleButton /> renders correctly 1`] = `
+<View
+  style={
+    [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      {
+        "alignItems": "center",
+        "display": "flex",
+        "width": "29.74%",
+      },
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    href="/"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    role="link"
+    style={
+      {
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          {
+            "alignItems": "center",
+            "backgroundColor": "#5A48F5",
+            "borderRadius": 15,
+            "display": "flex",
+            "height": 105,
+            "justifyContent": "center",
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text />
+    </View>
+    <View
+      style={
+        [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          {
+            "marginTop": 4,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        h6={true}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "color": "#20303C",
+              "writingDirection": "ltr",
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {},
+            undefined,
+            undefined,
+            undefined,
+            [
+              {
+                "textAlign": "center",
+              },
+            ],
+          ]
+        }
+      >
+        Aktuality
+      </Text>
+    </View>
+  </View>
+</View>
+`;

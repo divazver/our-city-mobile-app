@@ -1,0 +1,25 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+/*const { withAppBuildGradle, createRunOncePlugin } = require('expo/config-plugins');
+
+const withLegacyPackaging = ({ config }) => {
+
+    return withAppBuildGradle(config, (config) => {
+        const modResults = config.modResults;
+        console.log("ADDING useLegacyPackaging to build.gradle!")
+        modResults.contents = modResults.contents + '\nandroid.packagingOptions.jniLibs.useLegacyPackaging = true\n'
+        //       + 'project.ext.react.deleteDebugFilesForVariant = false\n';
+        const extPattern = /ext {/; // pattern to find "ext {" in the build.gradle file
+        console.log("ADDING changes to build.gradle!")
+        if (extPattern.test(modResults.contents)) {
+            // if "ext {" is found, add the new property to it
+            modResults.contents = modResults.contents.replace(extPattern, 'ext {\n  deleteDebugFilesForVariant = { false }\n  enableVmCleanup = { false }');
+        } else {
+            // if "ext {" is not found, add it along with the new property
+            modResults.contents = modResults.contents + '\n\next {\n  deleteDebugFilesForVariant: = { false }\n  deleteDebugFilesForVariant = { false }';
+        }
+        console.log("FINISHED adding changes to build.gradle!")
+        return config;
+    });
+};
+
+module.exports = createRunOncePlugin(withLegacyPackaging, 'android-legacy-packaging', '1.0.0');*/
